@@ -4,9 +4,8 @@ const app = express()
 const port = 3000
 
 require('dotenv').config()
-console.log(process.env.DB);
-
-mongoose.connect(process.env.DB);
+console.log(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
 
 const Weather = mongoose.model('Weather', { 
   city: String,
